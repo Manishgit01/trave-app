@@ -72,8 +72,16 @@ public class BookingController
     // 👇 ADD THIS NEW API (Pagination + Sorting)
     @GetMapping("/bookings")
     public org.springframework.data.domain.Page<Booking> getAllBookings(
-            org.springframework.data.domain.Pageable pageable) {
+            org.springframework.data.domain.Pageable pageable) 
+    {
         return service.getAllBookings(pageable);
+    }
+    
+    // To work "http://localhost:8080/Manish"
+    @GetMapping("/")
+    public String home() 
+    {
+        return "Welcome Manish!";
     }
     
     //Creates logger object used to print (info, error, debug) from controller,

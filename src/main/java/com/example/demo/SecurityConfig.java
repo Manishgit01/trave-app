@@ -20,7 +20,7 @@ public class SecurityConfig
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/auth/login", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
+                .requestMatchers("/Manish/auth/login", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
